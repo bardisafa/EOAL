@@ -10,14 +10,10 @@ Table of Contents
 =================
 
    * [Setup and Dependencies](#setup-and-dependencies)
-   * [Usage](#usage)
-      * [Train Active Domain Adaptation model](#train-active-domain-adaptation-model)
-      * [Download data](#data-download)
-      * [Pretrained checkpoints](#pretrained-checkpoints)
-      * [Evaluation and plotting Results](#evaluation-and-plotting-results)
-      * [Demo](#demo)
+   * [Run](#run)
+      * [CIFAR-10](#cifar-10)
+      * [CIFAR-100](#cifar-100)
    * [Reference](#reference)
-   * [License](#license)
 
 ## Setup and Dependencies
 
@@ -33,7 +29,7 @@ pip install -r environment.txt
 4. Modify the dataloader.py file in the torch.util.data.Dataloader source code as described [here](https://github.com/ningkp/LfOSA/issues/4).
    
 ## Run 
-
+First, create a folder `~/data`, the datasets will be automatically downloaded to this folder upon running the code.
 ### CIFAR-10
 Run ```python train.py``` to train an active adaptation model from scratch, by passing it appropriate arguments.
 
