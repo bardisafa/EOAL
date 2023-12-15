@@ -31,29 +31,19 @@ pip install -r environment.txt
 ## Run 
 First, create a folder `~/data`, the datasets will be automatically downloaded to this folder upon running the code.
 ### CIFAR-10
-Run ```python train.py``` to train an active adaptation model from scratch, by passing it appropriate arguments.
-
-We include hyperparameter configurations to reproduce paper numbers on DIGITS and DomainNet as configurations inside the ```config``` folder. For instance, to reproduce DIGITS (SVHN->MNIST) results with CLUE+MME, run:
+For the CIFAR-10 experiment with mismatch ratio of 20%, run:
 
 ```
-python train.py --load_from_cfg True \ 
-                --cfg_file config/digits/clue_mme.yml \
-                --use_cuda False
+python main.py --query-strategy eoal --init-percent 1 --known-class 2 --query-batch 1500 --seed 1 --model resnet18 --dataset cifar10 --max-query 11 --max-epoch 300 --stepsize 60 --diversity 1 --gpu 0
 ```
-
-To run a custom train job, you can create a custom config file and pass it to the train script. Pass `--use_cuda False` if you'd like to train on CPU instead.
 
 ### CIFAR-100
 
-Data for SVHN->MNIST is downloaded automatically via PyTorch. For DomainNet, follow the following steps:
-1. Download the original dataset for the domains of interest from [this link](http://ai.bu.edu/M3SDA/) – eg. Clipart and Sketch.
-2. Run: 
-```
-python preprocess_domainnet.py --input_dir <input_directory> \
-                               --domains 'clipart,sketch' \
-                               --output_dir 'data/'
-```
+For the CIFAR-100 experiment with mismatch ratio of 20%, run:
 
+```
+python main.py --query-strategy eoal --init-percent 8 --known-class 20 --query-batch 1500 --seed 1 --model resnet18 --dataset cifar100 --max-query 11 --max-epoch 300 --stepsize 60 --diversity 1 --gpu 0
+```
 ## Reference
 
 If you find this codebase useful in your research, please consider citing our paper:
