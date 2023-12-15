@@ -26,7 +26,7 @@ conda activate EOAL
 ```
 pip install -r environment.txt
 ``` 
-4. Modify the dataloader.py file in the torch.util.data.Dataloader source code as described [here](https://github.com/ningkp/LfOSA/issues/4).
+3. Modify the dataloader.py file in the torch.util.data.Dataloader source code as described [here](https://github.com/ningkp/LfOSA/issues/4).
    
 ## Run 
 First, create a folder `~/data`, the datasets will be automatically downloaded to this folder upon running the code.
