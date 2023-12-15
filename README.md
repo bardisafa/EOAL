@@ -31,7 +31,7 @@ pip install -r environment.txt
 ## Run 
 First, create a folder `~/data`, the datasets will be automatically downloaded to this folder upon running the code.
 ### CIFAR-10
-For the CIFAR-10 experiment with mismatch ratio of 20%, run:
+For the CIFAR-10 experiment with a mismatch ratio of 20%, run:
 
 ```
 python main.py --query-strategy eoal --init-percent 1 --known-class 2 --query-batch 1500 --seed 1 --model resnet18 --dataset cifar10 --max-query 11 --max-epoch 300 --stepsize 60 --diversity 1 --gpu 0
@@ -39,11 +39,19 @@ python main.py --query-strategy eoal --init-percent 1 --known-class 2 --query-ba
 
 ### CIFAR-100
 
-For the CIFAR-100 experiment with mismatch ratio of 20%, run:
+For the CIFAR-100 experiment with a mismatch ratio of 20%, run:
 
 ```
 python main.py --query-strategy eoal --init-percent 8 --known-class 20 --query-batch 1500 --seed 1 --model resnet18 --dataset cifar100 --max-query 11 --max-epoch 300 --stepsize 60 --diversity 1 --gpu 0
 ```
+
+Here is a description of some important arguments:
+1. --query-strategy: # Active sampling method. Supports random and eoal.
+2. --init-percent: # Initial labeled data percentantage. Use 1 for cifar10 and 8 for cifar100 and tiny-imagenet.
+3. --known-class: # Mismatch ratio. For 20%, 30%, 40%, use 2,3,4 and 20,30,40 for cifar10 and cifar100, respectively.
+4. --query-batch: # Annotation budget. Use 1500 for all experiments
+5. --max-query: # Number of AL cycles. Use 11 for 10 AL cycles (the first round shows the performance on the initial labeled data).
+6. --diversity: # Whether to use diversity sampling. The default value is 1.
 ## Reference
 
 If you find this codebase useful in your research, please consider citing our paper:
