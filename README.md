@@ -1,4 +1,4 @@
-## [EOAL: Entropic Open-set Active Learning](https://github.com/bardisafa/EOAL/) (AAAI 2024)
+## [EOAL: Entropic Open-set Active Learning](https://arxiv.org/abs/2312.14126) (AAAI 2024)
 ### Bardia Safaei, Vibashan VS, Celso M. de Melo, Vishal M. Patel
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
 
