@@ -47,7 +47,7 @@ python main.py --query-strategy eoal --init-percent 8 --known-class 20 --query-b
 
 Here is a description of some important arguments:
 1. --query-strategy: # Active sampling method. Supports random and eoal.
-2. --init-percent: # Initial labeled data percentantage. Use 1 for cifar10 and 8 for cifar100 and tiny-imagenet.
+2. --init-percent: # Initial labeled data percentage. Use 1 for cifar10 and 8 for cifar100 and tiny-imagenet.
 3. --known-class: # Mismatch ratio. For 20%, 30%, 40%, use 2,3,4 and 20,30,40 for cifar10 and cifar100, respectively.
 4. --query-batch: # Annotation budget. Use 1500 for all experiments
 5. --max-query: # Number of AL cycles. Use 11 for 10 AL cycles (the first round shows the performance on the initial labeled data).
