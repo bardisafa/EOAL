@@ -56,7 +56,14 @@ Here is a description of some important arguments:
 
 If you find this codebase useful in your research, please consider citing our paper:
 ```
-
+@misc{safaei2023entropic,
+      title={Entropic Open-set Active Learning}, 
+      author={Bardia Safaei and Vibashan VS and Celso M. de Melo and Vishal M. Patel},
+      year={2023},
+      eprint={2312.14126},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## Acknowledgements
