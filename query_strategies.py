@@ -44,6 +44,11 @@ def eoal_sampling(args, unlabeledloader, Len_labeled_ind_train, model, model_bc,
     labelArr = torch.tensor(labelArr)
     labelArr_k = labelArr[y_pred < args.known_class]
     
+    if not first_rd:
+        unk_entropy_list = torch.cat(unk_entropy_list).cpu()
+        unk_entropy_list = unk_entropy_list / log(len(cluster_centers))
+        entropy_list = entropy_list - unk_entropy_list
+        
     embeddings = feat_all[1:].cpu().numpy()
     embeddings_k = embeddings[y_pred < args.known_class]
 
